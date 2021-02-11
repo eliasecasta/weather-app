@@ -1,4 +1,4 @@
-# todo-list
+# Weather App
 
 Empty project.
 
