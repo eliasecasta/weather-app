@@ -2,28 +2,40 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Todo List</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Todo List</title>
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>
-  <div class="container-fluid">
-    <nav class="d-flex justify-content-around">
-      <h1>Weather App</h1>
-      <div class="city-search">
-        <input type="text" class="city-name"></input>
-        <button class="btn btn-success" onclick=getCity()>Search City</button>
-      </div>
-    </nav>
-    <div class="row">
-      <div class="content-wrapper">
-        <h1 class="content-city-name"></h1>
-        <h1 class="content-city-temperature"></h1>
-        <h1 class="content-city-time"></h1>
-      </div>
+    <div class="container-fluid">
+        <nav class="d-flex justify-content-around">
+            <h1>Weather App</h1>
+            <div class="city-search">
+                <input type="text" class="city-name"></input>
+                <button class="btn btn-success" onclick=initApp()>Search City</button>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="content-wrapper">
+                <input class="d-none" id="chkSwitch" type="checkbox" data-toggle="switchbutton" checked data-width="120"
+                    data-style="ios" data-onlabel="Celcius" data-offlabel="Fahrenheit" data-onstyle="primary"
+                    data-offstyle="success" />
+
+                <h1 class="content-city-name"></h1>
+                <h1 class="content-city-temperature"></h1>
+                <h1 class="content-city-time"></h1>
+            </div>
+        </div>
     </div>
-  </div>
+    <script
+        src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>
+
 </body>
 
 </html>

@@ -19,15 +19,17 @@ async function getCity() {
     const city = await response.json()
 
     console.log(city)
-    
-    displayDetails(city)
+
+    //displayDetails(city)
+    return city
 }
 
 function displayDetails(city) {
+    console.log(city)
     const cityName = $(".content-city-name")
     const cityTemperature = $(".content-city-temperature")
     const cityTime = $(".content-city-time")
-    
+
     const dt = city.dt
     const cityTimezone = city.timezone
 
@@ -42,19 +44,31 @@ function displayDetails(city) {
     cityName.append(city.name)
     cityTemperature.append(city.main.temp)
     cityTime.append(currentTimeReadable)
-    console.log(currentTimeReadable)
+    console.log(currentTime)
 
+    //console.log(dayOrNight(city, currentTime._i))
+    return currentTime._i
 }
 
-function dayOrNight(unixTime) {
+function dayOrNight(city, unixTime) {
     const day = city.sys.sunrise
     const night = city.sys.sunset
+    unixTime = unixTime.toString().slice(0, -3)
+    unixTime = parseInt(unixTime)
 
-    if (condition) {
-        
+    if (unixTime >= day && unixTime < night) {
+        return 'day'
     } else {
-        
+        return 'night'
     }
 }
 
-window.getCity = getCity
+
+async function initApp() {
+    let city = await getCity()
+    let unixTime = await displayDetails(city)
+    await dayOrNight(city, unixTime)    
+
+}
+
+window.initApp = initApp
