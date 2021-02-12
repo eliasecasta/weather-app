@@ -8,7 +8,19 @@ async function getCity() {
     const cityInput = $(".city-name")
     const cityName = cityInput.val()
     cityInput.val('')
-    const API = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=934ea5f8bc3f198fabf59b607a2fcc71`
+
+    let celOrFahrNode = document.querySelector(".cel-or-fahr")
+    let celOrFahr = celOrFahrNode.textContent
+    console.log(celOrFahr)
+    let API = ""
+
+    if (celOrFahr === 'celsius') {
+        API = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=934ea5f8bc3f198fabf59b607a2fcc71`
+
+    } else {
+        API = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=934ea5f8bc3f198fabf59b607a2fcc71`
+
+    }
 
     var requestOptions = {
         method: 'GET',
@@ -42,7 +54,7 @@ function displayDetails(city) {
 
 
     cityName.append(city.name)
-    cityTemperature.append(city.main.temp)
+    cityTemperature.append(Math.round(city.main.temp))
     cityTime.append(currentTimeReadable)
     console.log(currentTime)
 
@@ -64,11 +76,55 @@ function dayOrNight(city, unixTime) {
 }
 
 
+
+
+$(function () {
+    $('#chkSwitch').change(function () {
+        //console.log(currentTempNode, currentTemp)
+        let currentTempNode = document.querySelector(".content-city-temperature") //$(".content-city-temperature")
+        let currentTemp = currentTempNode.textContent
+        let celOrFahrNode = document.querySelector(".cel-or-fahr")
+        let celOrFahr = celOrFahrNode.textContent
+        console.log(celOrFahr)
+
+        if ($(this).prop('checked') === true) {
+            console.log('celsius to fahrenheit', currentTemp)
+            currentTemp = (currentTemp * (9 / 5)) + 32
+            currentTemp = parseFloat(currentTemp).toFixed(1)
+            currentTemp = Math.round(currentTemp)
+            currentTempNode.textContent = ''
+            currentTempNode.textContent = currentTemp
+            celOrFahrNode.textContent = ''
+            celOrFahrNode.textContent = 'fahrenheit'
+
+        } else {
+            console.log('fahrenheit to celsius', currentTemp)
+
+            currentTemp = (currentTemp - 32) * (5 / 9)
+            currentTemp = parseFloat(currentTemp).toFixed(1)
+            currentTemp = Math.round(currentTemp)
+            currentTempNode.textContent = ''
+            currentTempNode.textContent = currentTemp
+            celOrFahrNode.textContent = ''
+            celOrFahrNode.textContent = 'celsius'
+
+        }
+        //$('#console-event').html('Switch-Button: ' + $(this).prop('checked'))
+    })
+})
+
 async function initApp() {
     let city = await getCity()
     let unixTime = await displayDetails(city)
-    await dayOrNight(city, unixTime)    
+    await dayOrNight(city, unixTime)
+    //$("#chkSwitch").removeAttr("disabled")
+    //document.getElementById("chkSwitch").switchButton('enable')
+    //$("#chkSwitch").switchButton('enable')  
+    //document.getElementById('chkSwitch').switchButton('on')
+    $(".switch.ios").css('display', 'block')
+
 
 }
+
 
 window.initApp = initApp
