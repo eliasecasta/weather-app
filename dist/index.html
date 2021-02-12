@@ -1,12 +1,28 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo List</title>
-  <script defer src="main.js"></script></head>
-  <body>
-    <h1>hello</h1>
-    <h1>hello there</h1>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo List</title>
+<script defer src="main.js"></script></head>
+
+<body>
+  <div class="container-fluid">
+    <nav class="d-flex justify-content-around">
+      <h1>Weather App</h1>
+      <div class="city-search">
+        <input type="text" class="city-name"></input>
+        <button class="btn btn-success" onclick=getCity()>Search City</button>
+      </div>
+    </nav>
+    <div class="row">
+      <div class="content-wrapper">
+        <h1 class="content-city-name"></h1>
+        <h1 class="content-city-temperature"></h1>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
