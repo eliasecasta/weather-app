@@ -32,7 +32,6 @@ async function getCity() {
 
     console.log(city)
 
-    //displayDetails(city)
     return city
 }
 
@@ -74,9 +73,6 @@ function dayOrNight(city, unixTime) {
         return 'night'
     }
 }
-
-
-
 
 $(function () {
     $('#chkSwitch').change(function () {
@@ -124,7 +120,18 @@ async function initApp() {
     $(".switch.ios").css('display', 'block')
 
 
+
+
 }
+
+document.getElementById("city-name").addEventListener('keyup', function (e) {
+    if (e.KeyStatus.RepeatCount == 1) {
+        console.log("si se pudo")
+        e.Handled = true
+        console.log(e.Original)
+    }
+})
+
 
 
 window.initApp = initApp
