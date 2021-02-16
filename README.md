@@ -1,35 +1,56 @@
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/e71az/weather-app)
-
 # Weather App
 
-Empty project.
+> In this project I created a simple weather app that gets data from the Open Weather API in order to display the user the current temperature of the city that is being queried.
 
-## Building and running on localhost
 
-First install dependencies:
+## Built With
 
-```sh
-npm install
-```
+- Javascript
+- Jquery
+- ESLint
+- Stylelint
 
-To create a production build:
+## Live Demo
 
-```sh
-npm run build-prod
-```
+- [Gh-Pages](https://e71az.github.io/weather-app/)
 
-To create a development build:
+## Getting Started
 
-```sh
-npm run build-dev
-```
+To get this project up and running locally, you must have node installed on your local machine.
 
-## Running
+## Setup
 
-```sh
-node dist/bundle.js
-```
+- Clone this repository with: "git clone git@github.com:e71az/weather-app.git" using your terminal or command line.
+- Change to the project directory by entering "cd dist" in the terminal
+- Next run npm install to install the necessary dependencies
+- Finally run the 'index.html' inside the dist folder with 'Live Server' to start the application.
 
-## Credits
+### Prerequisites
 
-Made with [createapp.dev](https://createapp.dev/)
+Javascript
+Webpack
+
+## Authors
+
+👤 **Elias Castañeda**
+
+- Github: [@e71az](https://github.com/e71az)
+- Linkedin: [@e71az](https://www.linkedin.com/in/eliasecasta/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/e71az/weather-app/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+TBA
+
+## 📝 License
+
+MIT License
