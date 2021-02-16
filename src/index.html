@@ -10,7 +10,6 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="styles.css">
 
-    <script defer src="main.js"></script>
 </head>
 
 <body>
@@ -18,8 +17,10 @@
         <nav class="d-flex justify-content-around pt-3">
             <h1>Weather App</h1>
             <div class="city-search d-flex align-content-center">
-                <input type="text" id="city-name" class="city-name mr-1" placeholder="Enter a city name..."></input>
-                <button class="btn btn-success search-button" onclick=initApp()>Search City</button>
+                <form id="query-city">
+                    <input type="text" id="city-name" class="city-name mr-1" placeholder="Enter a city name..."></input>
+                    <button type="submit" class="btn btn-success search-button" >Search City</button>
+                </form>
             </div>
         </nav>
         <div class="row">
