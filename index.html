@@ -16,13 +16,11 @@
   <div class="container-fluid">
     <nav class="d-flex justify-content-around pt-3">
       <h1>Weather App</h1>
-      <div class="city-search d-flex align-content-center">
-        <form id="query-city">
-          <input name="city-name" type="text" id="city-name" class="city-name mr-1"
-            placeholder="Enter a city name..."></input>
-          <button type="submit" class="btn btn-success search-button">Search City</button>
-        </form>
-      </div>
+      <form id="query-city" class="d-flex align-content-center mt-2">
+        <input name="city-name" type="text" id="city-name" class="city-name mr-1"
+          placeholder="Enter a city name..."></input>
+        <button type="submit" class="btn btn-success search-button">Search City</button>
+      </form>
     </nav>
     <div class="row">
       <div class="button-wrapper d-flex col-12 justify-content-end pr-5 mt-5">
@@ -30,7 +28,7 @@
           data-onlabel="Fahrenheit" data-offlabel="Celsius" data-onstyle="primary" data-offstyle="success" />
         <div class="cel-or-fahr d-none">celsius</div>
       </div>
-      <div class="city-info">
+      <div class="city-info col-12 d-flex flex-column text-center mt-5">
         <h1 class="content-city-name"></h1>
         <h1 class="content-city-temperature"></h1>
         <h1 class="content-city-time"></h1>
