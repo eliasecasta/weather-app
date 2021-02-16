@@ -22,14 +22,6 @@ async function getCity() {
 
   }
 
-  var requestOptions = {
-    method: 'GET',
-    redirect: 'follow'
-  };
-
-  const response = await fetch(API, requestOptions)
-  const city = await response.json()
-
   console.log(city)
 
   return city
@@ -113,19 +105,12 @@ async function initApp() {
   let city = await getCity()
   let unixTime = await displayDetails(city)
   await dayOrNight(city, unixTime)
-  //$("#chkSwitch").removeAttr("disabled")
-  //document.getElementById("chkSwitch").switchButton('enable')
-  //$("#chkSwitch").switchButton('enable')  
-  //document.getElementById('chkSwitch').switchButton('on')
   $(".switch.ios").css('display', 'block')
 }
 
-document.getElementById("query-city").addEventListener('submit', function (e) {
+$("#query-city").submit(function (e) {
   e.preventDefault()
-  const formData = new FormData()
-  console.log(e.target)
+  initApp()
 })
-
-
 
 window.initApp = initApp
