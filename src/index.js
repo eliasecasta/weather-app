@@ -4,6 +4,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import $ from 'jquery'
 import moment from 'moment'
 
+const dayGIF = 'https://mondrian.mashable.com/wp-content%252Fuploads%252F2013%252F04%252Fpalm-trees.gif%252Ffull-fit-in__1200x2000.gif?signature=u6Pkj2nxfqX8m9jTaqwq1Xl6iqM=&source=http%3A%2F%2Fmashable.com'
+const nightGIF = 'https://i.gifer.com/VTNI.gif'
+
 async function getCity() {
     const cityInput = $(".city-name")
     const cityName = cityInput.val()
@@ -120,7 +123,23 @@ $(function () {
 async function initApp() {
     let city = await getCity()
     let unixTime = await displayDetails(city)
-    await dayOrNight(city, unixTime)
+    const dayNight = await dayOrNight(city, unixTime)
+
+    if (dayNight === "night") {
+        console.log("night")
+        $(".main-title").css("color", "white")
+        $(".row h1").css("color", "white")
+        $(".bg").css("background-image", `url(${nightGIF})`);
+
+    } else {
+        console.log('day')
+        $(".main-title").css("color", "white")
+        $(".row h1").css("color", "black")
+
+        $(".bg").css("background-image", `url(${dayGIF})`);
+
+
+    }
     $(".switch.ios").css('display', 'block')
 }
 

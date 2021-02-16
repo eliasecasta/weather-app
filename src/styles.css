@@ -2,3 +2,17 @@
   .switch.ios .switch-handle { border-radius: 20rem; }
 
 .switch.ios {display: none;}
+
+.bg {
+  /* background-image: url(https://i.gifer.com/VTNI.gif);
+  background-image: url(https://mondrian.mashable.com/wp-content%252Fuploads%252F2013%252F04%252Fpalm-trees.gif%252Ffull-fit-in__1200x2000.gif?signature=u6Pkj2nxfqX8m9jTaqwq1Xl6iqM=&source=http%3A%2F%2Fmashable.com); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100%;
+  min-width: 300px;
+  height: 100%;
+}
+
+/* h1 {
+    color: white;
+} */
