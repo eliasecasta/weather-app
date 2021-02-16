@@ -22,6 +22,9 @@ async function getCity() {
 
   }
 
+  const response = await fetch(API)
+  const city = await response.json()
+
   console.log(city)
 
   return city
