@@ -14,7 +14,6 @@ async function getCity() {
 
     let celOrFahrNode = document.querySelector(".cel-or-fahr")
     let celOrFahr = celOrFahrNode.textContent
-    console.log(celOrFahr)
     let API = ""
 
     if (celOrFahr === 'celsius') {
@@ -28,13 +27,11 @@ async function getCity() {
     const response = await fetch(API)
     const city = await response.json()
 
-    console.log(city)
 
     return city
 }
 
 function displayDetails(city) {
-    console.log(city)
     const cityName = $(".content-city-name")
     const cityTemperature = $(".content-city-temperature")
     const cityTime = $(".content-city-time")
@@ -66,7 +63,6 @@ function displayDetails(city) {
 
 
     cityTime.append(currentTimeReadable)
-    console.log(currentTime)
 
     return currentTime._i
 }
@@ -93,7 +89,6 @@ $(function () {
         const cityTemperatureType = $(".content-city-temperature-type")
 
         if ($(this).prop('checked') === true) {
-            console.log('celsius to fahrenheit', currentTemp)
             currentTemp = (currentTemp * (9 / 5)) + 32
             currentTemp = parseFloat(currentTemp).toFixed(1)
             currentTemp = Math.round(currentTemp)
@@ -104,7 +99,6 @@ $(function () {
             cityTemperatureType.text("F")
 
         } else {
-            console.log('fahrenheit to celsius', currentTemp)
 
             currentTemp = (currentTemp - 32) * (5 / 9)
             currentTemp = parseFloat(currentTemp).toFixed(1)
@@ -126,13 +120,11 @@ async function initApp() {
     const dayNight = await dayOrNight(city, unixTime)
 
     if (dayNight === "night") {
-        console.log("night")
         $(".main-title").css("color", "white")
         $(".row h1").css("color", "white")
         $(".bg").css("background-image", `url(${nightGIF})`);
 
     } else {
-        console.log('day')
         $(".main-title").css("color", "white")
         $(".row h1").css("color", "black")
 
