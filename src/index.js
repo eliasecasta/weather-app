@@ -64,7 +64,7 @@ function dayOrNight(city, unixTime) {
   const day = city.sys.sunrise;
   const night = city.sys.sunset;
   unixTime = unixTime.toString().slice(0, -3);
-  unixTime = parseInt(unixTime);
+  unixTime = Number(unixTime);
 
   if (unixTime >= day && unixTime < night) {
     return 'day';
