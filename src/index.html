@@ -1,0 +1,45 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css"
+        rel="stylesheet" />
+
+</head>
+
+<body class="bg">
+    <div class="container-fluid">
+        <nav class="d-flex justify-content-around pt-3 pb-5 mb-5">
+            <h1 class="main-title">Weather App</h1>
+            <form id="query-city" class="d-flex align-content-center mt-2 mr-5 pr-5">
+                <input name="city-name" type="text" id="city-name" class="city-name mr-1"
+                    placeholder="Enter a city name..."></input>
+                <button type="submit" class="btn btn-success search-button">Search City</button>
+            </form>
+            <div class="button-wrapper mt-2">
+                <input id="chkSwitch" type="checkbox" data-toggle="switchbutton" data-width="120" data-style="ios"
+                    data-onlabel="Fahrenheit" data-offlabel="Celsius" data-onstyle="primary" data-offstyle="success" />
+                <div class="cel-or-fahr d-none">celsius</div>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="city-info col-12 d-flex flex-column text-center mt-5 pt-5">
+                <h1 class="content-city-name"></h1>
+                <div class="d-flex justify-content-center">
+                    <h1 class="content-city-temperature"></h1>
+                    <h1 class="content-city-temperature-type ml-2"></h1>
+                </div>
+                <h1 class="content-city-time"></h1>
+            </div>
+        </div>
+    </div>
+    <script
+        src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>
+
+</body>
+
+</html>
