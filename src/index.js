@@ -7,7 +7,7 @@ import moment from 'moment';
 const dayGIF = 'https://mondrian.mashable.com/wp-content%252Fuploads%252F2013%252F04%252Fpalm-trees.gif%252Ffull-fit-in__1200x2000.gif?signature=u6Pkj2nxfqX8m9jTaqwq1Xl6iqM=&source=http%3A%2F%2Fmashable.com';
 const nightGIF = 'https://i.gifer.com/VTNI.gif';
 
-async function getCity() {
+let getCity = async () => {
   const cityInput = $('.city-name');
   const cityName = cityInput.val();
   cityInput.val('');
@@ -28,7 +28,7 @@ async function getCity() {
   return city;
 }
 
-function displayDetails(city) {
+let displayDetails = (city) => {
   const cityName = $('.content-city-name');
   const cityTemperature = $('.content-city-temperature');
   const cityTime = $('.content-city-time');
@@ -64,7 +64,7 @@ function displayDetails(city) {
   /* eslint-enable no-underscore-dangle */
 }
 
-function dayOrNight(city, unixTime) {
+let dayOrNight = (city, unixTime) => {
   const day = city.sys.sunrise;
   const night = city.sys.sunset;
   unixTime = unixTime.toString().slice(0, -3);
@@ -105,7 +105,7 @@ $(() => {
   });
 });
 
-async function initApp() {
+let initApp = async () => {
   const city = await getCity();
   const unixTime = await displayDetails(city);
   const dayNight = await dayOrNight(city, unixTime);
