@@ -3,6 +3,9 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import $ from 'jquery';
 import moment from 'moment';
+import alertify from '../alertifyjs/alertify';
+import '../alertifyjs/css/alertify.css';
+import '../alertifyjs/css/themes/default.css';
 
 const dayGIF = 'https://mondrian.mashable.com/wp-content%252Fuploads%252F2013%252F04%252Fpalm-trees.gif%252Ffull-fit-in__1200x2000.gif?signature=u6Pkj2nxfqX8m9jTaqwq1Xl6iqM=&source=http%3A%2F%2Fmashable.com';
 const nightGIF = 'https://i.gifer.com/VTNI.gif';
@@ -29,7 +32,7 @@ const getCity = async () => {
     response = await fetch(API);
 
     if (response.ok === false) {
-      throw Error('The city provided does not exist, a default city will be used');
+      throw Error('The city provided does not exist, the default city will be used.');
     }
 
     city = await response.json();
@@ -37,7 +40,7 @@ const getCity = async () => {
     API = 'https://api.openweathermap.org/data/2.5/weather?q=tokyo&units=metric&appid=934ea5f8bc3f198fabf59b607a2fcc71';
     response = await fetch(API);
     city = await response.json();
-    alert(error);
+    alertify.alert(`${error}`);
   }
 
   return city;
