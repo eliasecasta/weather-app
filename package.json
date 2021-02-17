@@ -12,6 +12,7 @@
     "build-prod": "webpack --mode production"
   },
   "dependencies": {
+    "alertifyjs": "^1.13.1",
     "bootstrap": "^4.6.0",
     "eslint-config-airbnb": "^18.2.1",
     "jquery": "^3.5.1",
