@@ -57,7 +57,11 @@ function displayDetails(city) {
 
   cityTime.append(currentTimeReadable);
 
+  /* eslint-disable no-underscore-dangle */
+
   return currentTime._i;
+
+  /* eslint-enable no-underscore-dangle */
 }
 
 function dayOrNight(city, unixTime) {
